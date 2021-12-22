@@ -1,40 +1,17 @@
 greeting:
   message: "hello"
 
-mp.messaging.incoming.events.connector: smallrye-rabbitmq
-#mp.messaging.incoming.events.connector: smallrye-amqp
-mp.messaging.incoming."events"."queue.name": events
-#mp.messaging.incoming.events.address: events
-#mp.messaging.incoming.events.container-id: events
-mp.messaging.incoming.events.durable: false
-
-mp.messaging.outgoing.events.address: events
-mp.messaging.outgoing.events.connector: smallrye-rabbitmq
-#mp.messaging.outgoing.events.connector: smallrye-amqp
-
-camel:
-  component:
-    rabbitmq:
-      addresses: vulture.rmq.cloudamqp.com:5671
-      username: gqekqpyw
-      password: 2hRXe4774hQAWzAvZSrpRBVePf4A3XvL
-      vhost: gqekqpyw
-      sslProtocol: true
-      autoDelete: false
-
 "%dev":
-  rabbitmq-host: vulture.rmq.cloudamqp.com
-  rabbitmq-port: 5671
-  rabbitmq-username: gqekqpyw
-  rabbitmq-password: 2hRXe4774hQAWzAvZSrpRBVePf4A3XvL
-  rabbitmq-virtual-host: gqekqpyw
-  rabbitmq-ssl: true
-  amqp-host: vulture.rmq.cloudamqp.com
-#  amqp-host: 192.168.59.101
-  amqp-port: 5671
-#  amqp-username: quarkus
-  amqp-username: gqekqpyw
-#  amqp-password: quarkus
-  amqp-password: 2hRXe4774hQAWzAvZSrpRBVePf4A3XvL
-  amqp-virtual-host: gqekqpyw
-  amqp-use-ssl: true
+  camel:
+    component:
+      rabbitmq:
+        addresses: vulture.rmq.cloudamqp.com:5671
+        username: gqekqpyw
+        password: 2hRXe4774hQAWzAvZSrpRBVePf4A3XvL
+        vhost: gqekqpyw
+        sslProtocol: true
+        autoDelete: false
+  quarkus:
+    mongodb:
+      connection-string: mongodb+srv://lotl:ITMMkQMxFwBTNnPl@cluster0.uvg2i.mongodb.net/lotl?retryWrites=true&w=majority
+      database: "lotl"

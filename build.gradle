@@ -13,12 +13,9 @@ dependencies {
     annotationProcessor "org.projectlombok:lombok:${lombokVersion}"
     implementation enforcedPlatform("${quarkusPlatformGroupId}:${quarkusPlatformArtifactId}:${quarkusPlatformVersion}")
     implementation enforcedPlatform("${quarkusPlatformGroupId}:quarkus-camel-bom:${quarkusPlatformVersion}")
-//    implementation enforcedPlatform("${quarkusPlatformGroupId}:quarkus-camel-bean:${quarkusPlatformVersion}")
     implementation 'io.quarkus:quarkus-mutiny'
 //    implementation 'io.quarkus:quarkus-liquibase-mongodb'
-//    implementation 'io.quarkus:quarkus-smallrye-reactive-messaging-rabbitmq'
-//    implementation 'io.quarkus:quarkus-smallrye-reactive-messaging-amqp'
-//    implementation 'io.quarkus:quarkus-mongodb-panache'
+    implementation 'io.quarkus:quarkus-mongodb-panache'
     implementation 'org.apache.camel.quarkus:camel-quarkus-rabbitmq'
     implementation 'org.apache.camel.quarkus:camel-quarkus-bean'
     implementation 'org.apache.camel.quarkus:camel-quarkus-gson'
@@ -30,6 +27,8 @@ dependencies {
     implementation 'io.quarkus:quarkus-container-image-jib'
     implementation 'io.quarkus:quarkus-arc'
     implementation 'io.quarkus:quarkus-resteasy'
+    implementation "org.mapstruct:mapstruct:${mapstructVersion}"
+    annotationProcessor "org.mapstruct:mapstruct-processor:${mapstructVersion}"
     testCompileOnly "org.projectlombok:lombok:${lombokVersion}"
     testAnnotationProcessor "org.projectlombok:lombok:${lombokVersion}"
     testImplementation 'io.rest-assured:rest-assured'
