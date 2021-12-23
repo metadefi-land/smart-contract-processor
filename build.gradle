@@ -27,6 +27,11 @@ dependencies {
     implementation 'io.quarkus:quarkus-container-image-jib'
     implementation 'io.quarkus:quarkus-arc'
     implementation 'io.quarkus:quarkus-resteasy'
+    implementation 'io.quarkus:quarkus-rest-client'
+    implementation 'io.quarkus:quarkus-rest-client-jackson'
+    implementation 'io.quarkus:quarkus-resteasy'
+    implementation "org.web3j:core:${web3jVersion}"
+    implementation "org.apache.commons:commons-lang3:${apacheCommonLangVersion}"
     implementation "org.mapstruct:mapstruct:${mapstructVersion}"
     annotationProcessor "org.mapstruct:mapstruct-processor:${mapstructVersion}"
     testCompileOnly "org.projectlombok:lombok:${lombokVersion}"

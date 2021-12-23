@@ -4,12 +4,14 @@ import io.quarkus.runtime.annotations.RegisterForReflection;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.math.BigInteger;
+
 @Getter
 @Setter
 @RegisterForReflection
-public class ContractEvent {
-    String id;
-    String type;
-    ContractEventDetail details;
-    Integer retries;
+public class MintToken {
+    String address;
+    String txnHash;
+    String amount;
+    BigInteger tokenId;
 }

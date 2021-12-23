@@ -8,7 +8,7 @@ import org.mapstruct.factory.Mappers;
 
 import java.sql.Timestamp;
 
-@Mapper( imports = { Timestamp.class } )
+@Mapper(imports = {Timestamp.class})
 public interface ContractEventMapper {
     ContractEventMapper INSTANCE = Mappers.getMapper(ContractEventMapper.class);
 

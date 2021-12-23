@@ -1,7 +1,27 @@
-greeting:
-  message: "hello"
+chain:
+  contract:
+    address: ""
+    abi: ""
+  api:
+    key: ""
+    module: account
+    action: txlist
+    start-block: 0
+    end-block: 9999999999
+
+quarkus:
+  rest-client:
+    ftm-scan:
+      url: https://api.ftmscan.com
+      scope: javax.inject.Singleton
 
 "%dev":
+  chain:
+    contract:
+      address: "0x9B2Bb6290fb910a960Ec344cDf2ae60ba89647f6"
+      abi: "abi"
+    api:
+      key: YourApiKeyToken
   camel:
     component:
       rabbitmq:
@@ -12,6 +32,11 @@ greeting:
         sslProtocol: true
         autoDelete: false
   quarkus:
+    http:
+      port: 8081
     mongodb:
       connection-string: mongodb+srv://lotl:ITMMkQMxFwBTNnPl@cluster0.uvg2i.mongodb.net/lotl?retryWrites=true&w=majority
       database: "lotl"
+    rest-client:
+      ftm-scan:
+        url: https://api-testnet.ftmscan.com
