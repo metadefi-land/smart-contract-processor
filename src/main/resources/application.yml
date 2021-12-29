@@ -1,4 +1,6 @@
 chain:
+  node:
+    url: ""
   contract:
     address: ""
     abi: ""
@@ -8,8 +10,17 @@ chain:
     action: txlist
     start-block: 0
     end-block: 9999999999
+    page: 1
+    offset: 50
+    sort: desc
 
 quarkus:
+  redis:
+    hosts: [ ]
+    password: ""
+  mongodb:
+    connection-string: ""
+    database: ""
   rest-client:
     ftm-scan:
       url: https://api.ftmscan.com
@@ -17,6 +28,8 @@ quarkus:
 
 "%dev":
   chain:
+    node:
+      url: "http://localhost:8545"
     contract:
       address: "0x9B2Bb6290fb910a960Ec344cDf2ae60ba89647f6"
       abi: "abi"
@@ -37,6 +50,10 @@ quarkus:
     mongodb:
       connection-string: mongodb+srv://lotl:ITMMkQMxFwBTNnPl@cluster0.uvg2i.mongodb.net/lotl?retryWrites=true&w=majority
       database: "lotl"
+    redis:
+      hosts:
+        - "redis://redis-16905.c295.ap-southeast-1-1.ec2.cloud.redislabs.com:16905"
+      password: LbR3qfjo4CUALjZ7eckdSoBcBc2lVIQp
     rest-client:
       ftm-scan:
         url: https://api-testnet.ftmscan.com

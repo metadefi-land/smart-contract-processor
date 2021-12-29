@@ -21,9 +21,21 @@ public interface ChainConfig {
     @WithName("api.end-block")
     String endBlock();
 
+    @WithName("api.page")
+    String page();
+
+    @WithName("api.offset")
+    String offset();
+
+    @WithName("api.sort")
+    String sort();
+
     @WithName("contract.address")
     String contractAddress();
 
     @WithName("contract.abi")
     String contractAbi();
+
+    @WithName("node.url")
+    String nodeUrl();
 }

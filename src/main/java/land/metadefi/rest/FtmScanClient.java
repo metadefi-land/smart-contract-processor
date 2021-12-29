@@ -19,7 +19,9 @@ public interface FtmScanClient {
         @QueryParam("endblock") String endBlock,
         @QueryParam("module") @DefaultValue("account") String module,
         @QueryParam("action") @DefaultValue("txlist") String action,
-        @QueryParam("sort") @DefaultValue("asc") String sort
+        @QueryParam("sort") @DefaultValue("asc") String sort,
+        @QueryParam("page") @DefaultValue("asc") String page,
+        @QueryParam("offset") @DefaultValue("asc") String offset
     );
 
 }

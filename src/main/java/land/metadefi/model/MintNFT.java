@@ -9,7 +9,9 @@ import java.math.BigInteger;
 @Getter
 @Setter
 @RegisterForReflection
-public class MintToken {
+public class MintNFT {
+    String type;
+    String symbol;
     String address;
     String txnHash;
     String amount;
