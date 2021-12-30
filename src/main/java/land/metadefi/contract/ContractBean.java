@@ -1,7 +1,6 @@
-package land.metadefi.event;
+package land.metadefi.contract;
 
 import io.quarkus.redis.client.RedisClient;
-import io.quarkus.redis.client.reactive.ReactiveRedisClient;
 import io.quarkus.runtime.annotations.RegisterForReflection;
 import land.metadefi.ChainConfig;
 import land.metadefi.entity.*;
@@ -10,7 +9,6 @@ import land.metadefi.enumrable.NFTType;
 import land.metadefi.error.*;
 import land.metadefi.mapper.ContractEventMapper;
 import land.metadefi.mapper.MintMapper;
-import land.metadefi.model.BlockEvent;
 import land.metadefi.model.ContractEvent;
 import land.metadefi.model.MintNFT;
 import land.metadefi.model.rest.ChainTransaction;
@@ -24,7 +22,6 @@ import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 import java.math.BigDecimal;
-import java.math.BigInteger;
 import java.util.Arrays;
 import java.util.Objects;
 
@@ -42,34 +39,7 @@ public class ContractBean {
     RedisClient redisClient;
 
     @Inject
-    ReactiveRedisClient reactiveRedisClient;
-
-    @Inject
     ChainConfig chainConfig;
-
-    public void blockEvent(BlockEvent event) {
-        log.info("ID: {}", event.getId());
-        log.info("Type: {}", event.getType());
-    }
-
-    public void mintLandEvent(ContractEvent event) {
-        // TODO: Update contract address and token ID
-        log.info("Route: {}", event.getId());
-        log.info("Route: {}", event.getType());
-
-        BigInteger tokenId = BigInteger.valueOf(1111111111);
-        String contractAddress = "";
-
-        saveContractEvent(event);
-
-        LandEntity landEntity = LandEntity.find("tokenId", tokenId).firstResult();
-        if (Objects.isNull(landEntity))
-            throw new TokenIdInvalidException("TokenID invalid: " + tokenId);
-
-        log.info("Update contract address [{}] for token ID [{}]", contractAddress, tokenId);
-        landEntity.setContractAddress(contractAddress);
-        landEntity.update();
-    }
 
     public void mintNFT(MintNFT mintNFT) {
 //        BigInteger tokenId = BigInteger.valueOf(10000);
@@ -131,7 +101,6 @@ public class ContractBean {
         }
 
         // TODO: Check compare value function
-
         // Validate value
         NFTEntity nftEntity = getEntityByType(mintNFT);
         if (Objects.isNull(nftEntity)) {
