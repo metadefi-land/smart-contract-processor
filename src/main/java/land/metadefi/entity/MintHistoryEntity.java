@@ -14,5 +14,6 @@ public class MintHistoryEntity extends PanacheMongoEntity {
     String address;
     String txnHash;
     String amount;
+    String status;
     BigInteger tokenId;
 }

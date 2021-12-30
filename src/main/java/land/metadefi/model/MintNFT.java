@@ -14,6 +14,5 @@ public class MintNFT {
     String symbol;
     String address;
     String txnHash;
-    String amount;
     BigInteger tokenId;
 }

@@ -11,5 +11,6 @@ public interface MintMapper {
     MintMapper INSTANCE = Mappers.getMapper(MintMapper.class);
 
     @Mapping(target = "id", ignore = true)
+    @Mapping(target = "status", ignore = true)
     MintHistoryEntity toEntity(MintNFT mintToken);
 }

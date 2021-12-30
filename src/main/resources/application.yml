@@ -13,6 +13,7 @@ chain:
     page: 1
     offset: 50
     sort: desc
+    max-expired-time: 1800
 
 quarkus:
   redis:

@@ -30,6 +30,9 @@ public interface ChainConfig {
     @WithName("api.sort")
     String sort();
 
+    @WithName("api.max-expired-time")
+    Integer maxExpiredTime();
+
     @WithName("contract.address")
     String contractAddress();
 
