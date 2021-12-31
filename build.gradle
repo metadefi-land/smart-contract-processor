@@ -19,6 +19,7 @@ dependencies {
     implementation 'org.apache.camel.quarkus:camel-quarkus-rabbitmq'
     implementation 'org.apache.camel.quarkus:camel-quarkus-bean'
     implementation 'org.apache.camel.quarkus:camel-quarkus-gson'
+    implementation 'org.apache.camel.quarkus:camel-quarkus-jaxb'
     implementation 'io.quarkus:quarkus-config-yaml'
     implementation 'io.quarkus:quarkus-smallrye-health'
     implementation 'io.quarkus:quarkus-kubernetes'

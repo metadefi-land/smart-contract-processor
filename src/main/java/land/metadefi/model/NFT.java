@@ -9,7 +9,7 @@ import java.math.BigInteger;
 @Getter
 @Setter
 @RegisterForReflection
-public class MintNFT {
+public class NFT {
     String type;
     String symbol;
     String address;

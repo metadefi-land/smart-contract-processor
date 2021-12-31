@@ -1,7 +1,7 @@
 package land.metadefi.mapper;
 
 import land.metadefi.entity.MintHistoryEntity;
-import land.metadefi.model.MintNFT;
+import land.metadefi.model.NFT;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.factory.Mappers;
@@ -12,5 +12,5 @@ public interface MintMapper {
 
     @Mapping(target = "id", ignore = true)
     @Mapping(target = "status", ignore = true)
-    MintHistoryEntity toEntity(MintNFT mintToken);
+    MintHistoryEntity toEntity(NFT mintToken);
 }
